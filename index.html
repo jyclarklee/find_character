@@ -114,13 +114,12 @@
         .loading-msg { margin-top: 25px; font-size: 18px; color: #fff; font-weight: 600; }
         .loading-sub { margin-top: 10px; font-size: 14px; color: #a8a9ad; }
         
-        /* 몰래 숨겨둔 텍스트 스타일 */
         .hidden-hiring {
             position: absolute;
             bottom: 10px;
             right: 10px;
             font-size: 8px;
-            color: rgba(255, 255, 255, 0.05); /* 거의 안 보이게 설정 */
+            color: rgba(255, 255, 255, 0.05);
             user-select: none;
         }
     </style>
@@ -129,7 +128,7 @@
 
 <div class="container" id="mainContainer">
     <div id="quiz-section">
-        <h1 id="mainTitle">🎬 디플만 5년 판 찐팬이<br>추천하는 취향 저격 타이틀</h1>
+        <h1 id="mainTitle">🎬 디플만 5년 구독한 찐팬이<br>추천하는 취향 저격 타이틀</h1>
         <div class="progress-container">
             <div class="progress-bar" id="progressBar"></div>
         </div>
@@ -184,7 +183,8 @@
         { q: "🦸 히어로가 된다면 어떤 타입인가요?", opts: ["슈트 빨! 장비 빨! 추진력 갑 🦾", "묵묵히 세상을 지키는 정의감 🛡️"] },
         { q: "🍕 야식으로 선택하고 싶은 메뉴는?", opts: ["피자 행성의 페퍼로니 피자 🍕", "라따뚜이가 만든 고급 요리 🥘"] },
         { q: "⏳ 시간이동을 할 수 있다면?", opts: ["미래의 최첨단 기술 구경 🤖", "과거의 낭만과 클래식 감성 📻"] },
-        { q: "🌈 마지막으로, 지금 끌리는 에너지는?", opts: ["폭발적인 레드 & 블루 🔴🔵", "차분한 그린 & 화이트 🟢⚪"] }
+        { q: "🌈 지금 끌리는 에너지는?", opts: ["폭발적인 레드 & 블루 🔴🔵", "차분한 그린 & 화이트 🟢⚪"] },
+        { q: "🐧 (진지) 미키 마우스와 뽀로로가 콜라보 해야 한다고 생각하시나요?", opts: ["YES! 이건 세기적 만남이다 🤝", "NO! 선 넘네.. 세계관 지켜줘 🙅"] }
     ];
 
     let currentIdx = 0;
@@ -228,8 +228,9 @@
         const msgs = [
             "아이언맨 슈트보다 꼼꼼하게 분석 중... 🛠️",
             "엘사가 얼린 서버 녹이는 중... ❄️🔥",
-            "무료 구독권 주면 더 잘 만들 수 있는데... 🤫", // 깜짝 숨겨진 멘트
-            "ㅎㅎㅎ 디플 볼꺼 많아요~ 🏰✨", // 깜짝 숨겨진 멘트
+            "무료 구독권 주면 더 잘 만들 수 있는데... 🤫",
+            "디즈니 마케팅팀 나를 채용해요! 🏰✨",
+            "뽀로로와 미키의 계약 조건을 검토 중... 🐧🐭",
             "멀티버스에서 당신의 취향 찾는 중... 🌌"
         ];
         
@@ -241,7 +242,7 @@
             } else {
                 clearInterval(msgInterval);
             }
-        }, 1000);
+        }, 800);
 
         setTimeout(() => {
             const finalLink = RECOMMEND_LINKS[Math.floor(Math.random() * RECOMMEND_LINKS.length)];
