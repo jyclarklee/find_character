@@ -1,2 +1,15 @@
----
-제작: [jyclarklee](https://github.com/jyclarklee)
+# 🏰 Disney+ Title Finder (디플 찐팬 버전)
+
+디즈니+만 **5년 넘게 구독 중인 찐팬(Product Manager)**이 직접 만든 개인 맞춤형 콘텐츠 추천 도구입니다. 단순히 장르만 묻는 것이 아니라, 디즈니 세계관의 깊은 감성을 자극하는 질문을 통해 오늘의 인생작을 찾아드립니다.
+
+## ✨ 주요 기능
+* **13단계 정밀 분석**: 찐팬만이 이해할 수 있는 명대사와 상황별 질문 12개 + 세기적 난제(미키X뽀로로) 1개로 구성
+* **디즈니+ 스타일 UX**: 공식 앱의 다크 모드 감성과 부드러운 0.4초 Dimming 전환 효과 적용
+* **파란 물결 로딩**: 분석 중 5초간 파란 물결이 차오르며 기대감을 높이는 시각적 효과
+* **자동 리다이렉션**: 분석 완료 시 클릭 없이 즉시 추천 엔티티(Entity) 또는 페이지로 연결
+
+## 🛠 기술 스택
+* HTML5 / CSS3 (Custom Wave Animation & Dimming Transition)
+* Vanilla JavaScript (Logic-based Recommendation)
+
+2026.03.31 애기 재우고 작성함 ㅋㅋㅋ
