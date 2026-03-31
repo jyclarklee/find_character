@@ -1,182 +1,135 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>디즈니 크루즈 어드벤처, 평택항 출항 결정 - 매일경제</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-      background: #f5f5f5;
-      color: #111;
-    }
-    .page-wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 2rem 2rem 3rem;
-    }
-    .mk-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid #d0021b;
-      padding-bottom: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .mk-logo { font-size: 26px; font-weight: 800; color: #d0021b; letter-spacing: -0.5px; }
-    .mk-url { font-size: 11px; color: #888; }
-    .category {
-      display: inline-block;
-      background: #d0021b;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 3px;
-      margin-bottom: 12px;
-    }
-    h1.headline {
-      font-size: 24px;
-      font-weight: 800;
-      line-height: 1.45;
-      margin-bottom: 10px;
-      color: #111;
-    }
-    .byline {
-      font-size: 13px;
-      color: #888;
-      margin-bottom: 1.5rem;
-      border-bottom: 0.5px solid #ddd;
-      padding-bottom: 0.75rem;
-    }
-    .pull-quote {
-      background: #f9f9f9;
-      border-left: 3px solid #d0021b;
-      padding: 12px 16px;
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 1.25rem;
-      line-height: 1.7;
-    }
-    p.body-text {
-      font-size: 16px;
-      line-height: 1.9;
-      color: #222;
-      margin-bottom: 1.1rem;
-    }
-    .related-box {
-      border: 0.5px solid #ddd;
-      border-radius: 6px;
-      padding: 14px 18px;
-      font-size: 13px;
-      color: #444;
-      line-height: 1.8;
-      margin: 1.5rem 0;
-      background: #fafafa;
-    }
-    .related-box .label {
-      font-weight: 700;
-      color: #d0021b;
-      font-size: 11px;
-      display: block;
-      margin-bottom: 6px;
-      letter-spacing: 0.5px;
-    }
-    .analyst-box {
-      background: #f4f4f4;
-      border-radius: 6px;
-      padding: 14px 18px;
-      font-size: 13px;
-      color: #444;
-      line-height: 1.8;
-      margin: 1.5rem 0;
-    }
-    .analyst-box .label {
-      font-weight: 700;
-      color: #111;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .article-footer {
-      border-top: 0.5px solid #ddd;
-      padding-top: 12px;
-      font-size: 12px;
-      color: #888;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .april-badge {
-      background: #fff3cd;
-      color: #856404;
-      border: 0.5px solid #ffc107;
-      padding: 3px 10px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 11px;
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>나랑 닮은 디즈니 캐릭터는?</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:#f5f5f5;color:#111;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;}
+.wrap{max-width:560px;width:100%;background:#fff;border-radius:16px;padding:2rem;box-shadow:0 2px 16px rgba(0,0,0,.07);}
+.title{font-size:26px;font-weight:700;color:#111;text-align:center;margin-bottom:6px;}
+.subtitle{font-size:14px;color:#888;text-align:center;margin-bottom:1.75rem;}
+.prog-bar{height:4px;background:#e5e5e5;border-radius:2px;margin-bottom:2rem;}
+.prog-fill{height:4px;background:#7F77DD;border-radius:2px;transition:width 0.4s ease;}
+.q-label{font-size:12px;color:#888;margin-bottom:8px;}
+.q-text{font-size:18px;font-weight:600;color:#111;margin-bottom:1.5rem;line-height:1.5;}
+.options{display:grid;gap:10px;}
+.opt-btn{background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px 18px;text-align:left;font-size:15px;color:#222;cursor:pointer;transition:background 0.15s,border-color 0.15s;line-height:1.5;font-family:inherit;}
+.opt-btn:hover{background:#f3f2ff;border-color:#7F77DD;}
+.back-btn{font-size:13px;color:#aaa;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;}
+.back-btn:hover{color:#555;}
+.result-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:2rem;text-align:center;}
+
+/* 이미지 스타일 추가 */
+.char-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 4px solid #EEEDFE;
+}
+
+.char-name{font-size:24px;font-weight:700;color:#111;margin-bottom:6px;}
+.char-badge{display:inline-block;background:#EEEDFE;color:#3C3489;font-size:12px;padding:3px 12px;border-radius:20px;margin-bottom:1rem;}
+.char-desc{font-size:15px;color:#555;line-height:1.8;margin-bottom:1.25rem;}
+.traits{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:1.75rem;}
+.trait{background:#f4f4f4;color:#666;font-size:13px;padding:4px 14px;border-radius:20px;}
+.retry-btn{background:transparent;border:1px solid #ddd;border-radius:8px;padding:10px 28px;font-size:14px;color:#333;cursor:pointer;font-family:inherit;}
+.retry-btn:hover{background:#f4f4f4;}
+</style>
 </head>
 <body>
-<div class="page-wrap">
-
-  <div class="mk-header">
-    <div class="mk-logo">매일경제</div>
-    <div class="mk-url">MK.CO.KR</div>
-  </div>
-
-  <div class="category">산업·관광</div>
-
-  <h1 class="headline">
-    디즈니 크루즈 어드벤처, 다음 기항지는 한국<br>
-    평택항 출항 공식 결정…K-팝·BTS 한류 열풍이 이끌었다
-  </h1>
-
-  <p class="byline">2026.04.01 08:15 &nbsp;|&nbsp; 이윤하 기자</p>
-
-  <div class="pull-quote">
-    "BTS와 K-팝이 전 세계에 증명한 한국의 문화적 위상, 디즈니가 직접 선택했다"
-  </div>
-
-  <p class="body-text">
-    세계 최대 크루즈선 디즈니 어드벤처(Disney Adventure)가 싱가포르에 이어 한국 평택항을 차기 출항지로 낙점했다. 월트 디즈니 컴퍼니는 1일 공식 성명을 통해 디즈니 크루즈 라인의 아시아 태평양 확장 전략의 일환으로 경기도 평택항을 신규 거점 항구로 선정했다고 밝혔다.
-  </p>
-
-  <div class="related-box">
-    <span class="label">▶ 관련 기사</span>
-    디즈니 어드벤처, 지난 3월 10일 싱가포르 마리나베이 크루즈센터에서 공식 취항 — 아시아 최초 디즈니 크루즈 홈포트 출범. 총 208,108GT, 승객 6,000명 규모로 디즈니 크루즈 라인 역대 최대 선박. 마블 랜딩, 7개 테마 구역, 해상 최장 롤러코스터 '아이언사이클 테스트런' 탑재.
-  </div>
-
-  <p class="body-text">
-    디즈니는 평택항 선정 배경으로 한국의 폭발적인 글로벌 문화 영향력을 직접 거론했다. 디즈니 크루즈 라인 아시아 총괄 사라 폭스(Sarah Fox) 부사장은 "방탄소년단(BTS)이 전 세계 팬덤에 미친 영향은 단순한 음악을 넘어 하나의 문화 운동"이라며 "K-팝이 증명한 한국의 소프트파워는 디즈니가 추구하는 스토리텔링 철학과 맞닿아 있다"고 말했다.
-  </p>
-
-  <p class="body-text">
-    평택항은 수도권 접근성과 인천국제공항과의 연계성 측면에서 높은 평가를 받았으며, 경기도 및 해양수산부와의 사전 협의도 상당 부분 진척된 것으로 전해졌다. 디즈니 어드벤처의 평택항 일정은 2028년부터 순차적으로 편입될 예정이다.
-  </p>
-
-  <p class="body-text">
-    업계에서는 이번 결정이 2029년 도쿄 오리엔탈랜드와 공동 추진 중인 일본 크루즈 라인 출범과 맞물려, 아시아 크루즈 시장 선점을 위한 '한·일 투 트랙' 전략의 일환이라는 분석이 나온다.
-  </p>
-
-  <div class="analyst-box">
-    <span class="label">업계 반응</span>
-    한 해양관광 전문가는 "평택항은 수도권 배후 수요와 황해 루트를 동시에 활용할 수 있는 전략적 요충지"라며 "디즈니가 K-문화를 전략적 자산으로 인식하고 있다는 점에서 한국 관광산업 전반에 긍정적 신호"라고 평가했다.
-  </div>
-
-  <p class="body-text">
-    디즈니 어드벤처는 현재 싱가포르에서 3박·4박 전일 해상 항해를 운영 중이며, 최소 2031년 초까지 싱가포르를 거점으로 유지하는 계약이 체결된 상태다. 평택항 운항은 추가 노선 확장의 형태로 진행될 것으로 보인다.
-  </p>
-
-  <div class="article-footer">
-    <span>이윤하 기자 yoonha.lee@mk.co.kr</span>
-    <span class="april-badge">⚠ 만우절 가짜 기사입니다</span>
-  </div>
-
+<div class="wrap">
+  <div class="title">나랑 닮은 디즈니 캐릭터는?</div>
+  <div class="subtitle">8가지 질문으로 찾아보세요</div>
+  <div class="prog-bar"><div class="prog-fill" id="prog" style="width:0%"></div></div>
+  <div id="quiz-area"></div>
+  <div id="result-area" style="display:none;"></div>
 </div>
+
+<script>
+// 검색된 이미지 URL 객체
+const IMG_URLS = {
+  elsa: "http://googleusercontent.com/image_collection/image_retrieval/4193606564274232689_0",
+  moana: "http://googleusercontent.com/image_collection/image_retrieval/15534569567027914878_0",
+  ariel: "http://googleusercontent.com/image_collection/image_retrieval/14470382141290338752_0",
+  belle: "http://googleusercontent.com/image_collection/image_retrieval/6930066701030145905_0",
+  mickey: "http://googleusercontent.com/image_collection/image_retrieval/8154421083397695340_0",
+  simba: "http://googleusercontent.com/image_collection/image_retrieval/9701597661315261704_0",
+  olaf: "http://googleusercontent.com/image_collection/image_retrieval/15575957885732973451_0",
+  stitch: "http://googleusercontent.com/image_collection/image_retrieval/3193717857259181895_0",
+  woody: "http://googleusercontent.com/image_collection/image_retrieval/5094342609162712501_0",
+  buzz: "http://googleusercontent.com/image_collection/image_retrieval/4609752686389772568_0",
+  ironman: "http://googleusercontent.com/image_collection/image_retrieval/17316547204845403112_0",
+  yoda: "http://googleusercontent.com/image_collection/image_retrieval/14990733095461813582_0"
+};
+
+const questions=[
+  {q:"주말 오전, 나는 보통...",opts:[{text:"침대에서 뒹굴며 쉰다. 에너지 충전이 먼저!",val:"introvert"},{text:"친구에게 연락해서 뭔가 같이 한다",val:"extrovert"},{text:"혼자 산책이나 카페에서 여유를 즐긴다",val:"calm"},{text:"계획 세우고 할 일 목록 정리한다",val:"leader"}]},
+  {q:"나를 한 단어로 표현한다면?",opts:[{text:"따뜻함",val:"warm"},{text:"용감함",val:"brave"},{text:"엉뚱함",val:"quirky"},{text:"충성스러움",val:"loyal"}]},
+  {q:"힘든 상황에서 나는...",opts:[{text:"유머로 분위기를 풀어낸다",val:"quirky"},{text:"정면 돌파! 무조건 해결한다",val:"brave"},{text:"주변 사람에게 의지하며 함께 헤쳐나간다",val:"warm"},{text:"조용히 혼자 고민하다 해결책을 찾는다",val:"calm"}]},
+  {q:"나의 가장 큰 강점은?",opts:[{text:"카리스마와 리더십",val:"leader"},{text:"공감 능력과 따뜻한 마음",val:"warm"},{text:"창의성과 상상력",val:"quirky"},{text:"끈기와 책임감",val:"loyal"}]},
+  {q:"이상적인 모험이 있다면?",opts:[{text:"바다 속 미지의 세계 탐험",val:"brave"},{text:"친구들과 신나는 도심 여행",val:"extrovert"},{text:"우주나 미래 세계 탐방",val:"quirky"},{text:"아늑한 곳에서 책 읽기 (모험은 책으로!)",val:"calm"}]},
+  {q:"친구들이 나에 대해 뭐라고 할까?",opts:[{text:"항상 재미있고 분위기 메이커",val:"quirky"},{text:"믿음직하고 든든한 존재",val:"loyal"},{text:"열정적이고 추진력 있는 사람",val:"leader"},{text:"부드럽고 배려심 넘치는 사람",val:"warm"}]},
+  {q:"새로운 환경에서 나는...",opts:[{text:"먼저 말 걸고 새 친구를 만든다",val:"extrovert"},{text:"천천히 관찰하다 자연스럽게 녹아든다",val:"introvert"},{text:"낯설어도 일단 뛰어든다",val:"brave"},{text:"내 역할 찾아 묵묵히 해낸다",val:"loyal"}]},
+  {q:"나에게 가장 중요한 것은?",opts:[{text:"자유와 꿈을 향한 도전",val:"brave"},{text:"소중한 사람들과의 관계",val:"warm"},{text:"즐거움과 유머",val:"quirky"},{text:"책임과 의리",val:"loyal"}]}
+];
+
+const characters=[
+  {id:"elsa",name:"엘사",category:"디즈니 프린세스",desc:"강인하고 독립적이며, 내면의 힘을 믿는 당신. 때로는 혼자이지만 그 안에서 진정한 자신을 찾아가는 타입이에요.",traits:["독립적","강인함","감성적","성장형"],keys:["introvert","calm","leader"]},
+  {id:"moana",name:"모아나",category:"디즈니 프린세스",desc:"거침없는 도전 정신과 공동체를 향한 책임감. 바다처럼 넓은 마음으로 앞으로 나아가는 사람이에요.",traits:["용감함","리더십","책임감","모험심"],keys:["brave","leader","loyal"]},
+  {id:"ariel",name:"아리엘",category:"디즈니 프린세스",desc:"호기심 많고 새로운 세계에 빠져드는 당신. 규칙보다 꿈을 선택하는 자유로운 영혼이에요.",traits:["호기심","자유로움","열정","낙관적"],keys:["extrovert","brave","quirky"]},
+  {id:"belle",name:"벨",category:"디즈니 프린세스",desc:"지적이고 따뜻한 마음을 가진 당신. 겉모습보다 내면을 보는 깊이 있는 사람이에요.",traits:["지성","따뜻함","독립적","공감력"],keys:["calm","warm","introvert"]},
+  {id:"mickey",name:"미키 마우스",category:"클래식 캐릭터",desc:"밝고 긍정적인 에너지로 주변을 밝히는 당신. 어떤 상황에서도 유쾌함을 잃지 않아요.",traits:["명랑함","긍정적","사교적","활발함"],keys:["extrovert","quirky","warm"]},
+  {id:"simba",name:"심바",category:"인기 애니메이션",desc:"책임감 있는 리더로 성장하는 당신. 과거를 딛고 자신의 길을 당당히 걷는 타입이에요.",traits:["용기","성장","리더십","의리"],keys:["leader","brave","loyal"]},
+  {id:"olaf",name:"올라프",category:"인기 애니메이션",desc:"순수하고 유쾌한 당신. 따뜻한 유머로 주변 사람들을 웃게 만드는 사람이에요.",traits:["유머","순수함","낙관적","다정함"],keys:["quirky","warm","extrovert"]},
+  {id:"woody",name:"우디",category:"픽사 캐릭터",desc:"끝까지 책임지는 진짜 리더. 친구를 위해서라면 뭐든 하는 의리의 사나이예요.",traits:["책임감","의리","리더십","헌신"],keys:["loyal","leader","warm"]},
+  {id:"buzz",name:"버즈 라이트이어",category:"픽사 캐릭터",desc:"도전을 두려워하지 않는 당신. '무한하고 그 너머로!' — 한계를 믿지 않는 타입이에요.",traits:["도전정신","용감함","자신감","성실함"],keys:["brave","leader","loyal"]},
+  {id:"stitch",name:"스티치",category:"인기 애니메이션",desc:"엉뚱하지만 가족 같은 유대감을 소중히 여기는 당신. 겉은 독특해도 속은 따뜻해요.",traits:["유니크함","애정","충성심","엉뚱함"],keys:["quirky","loyal","introvert"]},
+  {id:"ironman",name:"아이언맨",category:"마블",desc:"천재적인 두뇌와 추진력을 겸비한 당신. 말보다 행동으로 증명하는 타입이에요.",traits:["천재성","추진력","자신감","창의성"],keys:["leader","brave","quirky"]},
+  {id:"yoda",name:"요다",category:"스타워즈",desc:"조용하지만 깊은 지혜를 가진 당신. 말 한마디에 무게가 있고 주변을 편안하게 만들어요.",traits:["지혜","침착함","관찰력","깊이"],keys:["calm","introvert","loyal"]}
+];
+
+let answers=[],current=0;
+function scoreFn(c){let s=0;answers.forEach(v=>{if(c.keys.includes(v))s++;});return s;}
+function getResult(){let best=characters[0],bs=-1;characters.forEach(c=>{const s=scoreFn(c);if(s>bs){bs=s;best=c;}});return best;}
+
+function renderQ(){
+  const q=questions[current];
+  document.getElementById('prog').style.width=((current/questions.length)*100)+'%';
+  document.getElementById('quiz-area').innerHTML=`
+    <div class="q-label">${current+1} / ${questions.length}</div>
+    <div class="q-text">${q.q}</div>
+    <div class="options">${q.opts.map(o=>`<button class="opt-btn" onclick="choose('${o.val}')">${o.text}</button>`).join('')}</div>
+    ${current>0?`<div style="text-align:center;margin-top:1rem;"><button class="back-btn" onclick="goBack()">← 이전</button></div>`:''}
+  `;
+}
+
+function choose(val){answers[current]=val;current++;if(current>=questions.length)showResult();else renderQ();}
+function goBack(){if(current>0){current--;renderQ();}}
+
+function showResult(){
+  document.getElementById('prog').style.width='100%';
+  const c=getResult();
+  document.getElementById('quiz-area').style.display='none';
+  const ra=document.getElementById('result-area');
+  ra.style.display='block';
+  ra.innerHTML=`
+    <div class="result-card">
+      <img src="${IMG_URLS[c.id]}" alt="${c.name}" class="char-img">
+      <div class="char-name">${c.name}</div>
+      <div class="char-badge">${c.category}</div>
+      <div class="char-desc">${c.desc}</div>
+      <div class="traits">${c.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div>
+      <button class="retry-btn" onclick="restart()">다시 해보기</button>
+    </div>
+  `;
+}
+
+function restart(){answers=[];current=0;document.getElementById('result-area').style.display='none';document.getElementById('quiz-area').style.display='block';document.getElementById('prog').style.width='0%';renderQ();}
+renderQ();
+</script>
 </body>
 </html>
